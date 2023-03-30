@@ -1,8 +1,9 @@
 import loadHome from './home';
+import loadMenu from './menu'
 
 function createHeader() {
 
-    const header = document.createElement('header');
+    const header = document.createElement('div');
     header.classList.add('header');
 
     const restoName = document.createElement('h1');
@@ -12,6 +13,13 @@ function createHeader() {
     header.appendChild(createButtons());
 
     return header;
+}
+
+function createMain() {
+    const main = document.createElement('div');
+    main.classList.add('main');
+
+    return main;
 }
 
 function createButtons() {
@@ -37,12 +45,11 @@ function createButtons() {
     return nav;
 }
 
-function createMain() {
-    const main = document.createElement('main');
-    main.classList.add('main');
-    main.setAttribute("id", "main");
+function createFooter() {
+    const footer = document.createElement('div');
+    footer.classList.add('footer');
 
-    return main;
+    return footer;
 }
 
 
@@ -50,6 +57,7 @@ function pageLoad() {
     const content = document.querySelector('#content');
     content.appendChild(createHeader());
     content.appendChild(createMain());
+    content.appendChild(createFooter());
     loadHome();
 }
 
