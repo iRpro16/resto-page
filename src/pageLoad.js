@@ -1,5 +1,6 @@
+import loadContact from './contact';
 import loadHome from './home';
-import loadMenu from './menu'
+import loadMenu from './menu';
 
 function createHeader() {
 
@@ -28,19 +29,31 @@ function createButtons() {
     nav.classList.add('nav');
 
     const homeBtn = document.createElement('button');
+    homeBtn.classList.add('home');
     homeBtn.innerHTML = 'home';
     nav.appendChild(homeBtn);
 
     const menuBtn = document.createElement('button');
+    menuBtn.classList.add('menu');
     menuBtn.innerHTML = 'menu';
-    nav.appendChild(homeBtn);
+    nav.appendChild(menuBtn);
 
     const contactBtn = document.createElement('button');
+    contactBtn.classList.add('contact');
     contactBtn.innerHTML = 'contact';
+    nav.appendChild(contactBtn);
 
-    nav.appendChild(homeBtn);
-    nav.appendChild(menuBtn);
-    nav.appendChild(contactBtn)
+    homeBtn.addEventListener('click', () => {
+        loadHome();
+    })
+
+    menuBtn.addEventListener('click', () => {
+        loadMenu();
+    })
+
+    contactBtn.addEventListener('click', () => {
+        loadContact()
+    })
 
     return nav;
 }
