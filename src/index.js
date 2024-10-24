@@ -1,9 +1,13 @@
 import "./styles.css";
 import lasagna from "./images/lasagna.jpg";
+import { createMenu } from "./pages/menu";
 
-const homePage = (function() {
+function createHome() {
     // Get content cont
     let content = document.getElementById("content");
+
+    // clear content each time;
+    content.innerHTML = "";
     
     // Background image for home page
     document.body.style.backgroundImage = `url(${lasagna})`;
@@ -33,4 +37,26 @@ const homePage = (function() {
     slogan.style.color = 'pink';
     slogan.innerText = 'lasagna, vino e ricordi';
     restoNameDiv.appendChild(slogan);
-})();
+
+    // Opening hours
+    const hoursCont = document.createElement("div");
+    hoursCont.classList.add('hours-cont');
+
+    // Hours open
+    const hoursList = document.createElement("ul");
+    hoursList.classList.add("opening-hours");
+    const hoursOne = document.createElement("li");
+    hoursOne.innerText = "MONDAY TO THURSDAY 5H - 21H";
+    const hoursTwo = document.createElement("li");
+    hoursTwo.innerText = "FRIDAY TO SUNDAY 5H - 23H";
+    hoursList.appendChild(hoursOne);
+    hoursList.appendChild(hoursTwo);
+    hoursCont.appendChild(hoursList);
+    content.appendChild(hoursCont);
+};
+createHome();
+
+const getMenu = document.querySelector(".menu");
+const getHome = document.querySelector(".home");
+getMenu.addEventListener("click", createMenu);
+getHome.addEventListener("click", createHome);
