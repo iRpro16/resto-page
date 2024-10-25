@@ -5,9 +5,21 @@ import { createMenu } from "./pages/menu";
 function createHome() {
     // Get content cont
     let content = document.getElementById("content");
-
-    // clear content each time;
+    const header = document.querySelector(".header");
+    header.style.borderBottom = 'none';
     content.innerHTML = "";
+
+    // content
+    content.style.height = '90%';
+    content.style.display = 'flex';
+    content.style.justifyContent = 'center';
+    content.style.alignItems = 'center';
+    content.style.flexDirection = 'column';
+
+    // Rid first element
+    if (header.childElementCount == 2) {
+        header.removeChild(header.firstElementChild);
+    }
     
     // Background image for home page
     document.body.style.backgroundImage = `url(${lasagna})`;
@@ -46,9 +58,9 @@ function createHome() {
     const hoursList = document.createElement("ul");
     hoursList.classList.add("opening-hours");
     const hoursOne = document.createElement("li");
-    hoursOne.innerText = "MONDAY TO THURSDAY 5H - 21H";
+    hoursOne.innerText = "MONDAY TO THURSDAY 17H - 21H";
     const hoursTwo = document.createElement("li");
-    hoursTwo.innerText = "FRIDAY TO SUNDAY 5H - 23H";
+    hoursTwo.innerText = "FRIDAY TO SUNDAY 17H - 23H";
     hoursList.appendChild(hoursOne);
     hoursList.appendChild(hoursTwo);
     hoursCont.appendChild(hoursList);
