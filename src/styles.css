@@ -74,7 +74,7 @@ body {
     color: pink;
 }
 
-.resto-header, .antimenu-title {
+.resto-header, .antimenu-title, .primimenu-title {
     font-family: "Pacifico", cursive;
     font-weight: 400;
 }
@@ -92,6 +92,12 @@ body {
     font-weight: 400;
 }
 
+.primimenu-cont > div {
+    color: pink;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 400;
+}
+
 .antimenu-cont > div > p {
     font-size: 1.8rem;
     margin: 0;
@@ -102,6 +108,16 @@ body {
     font-size: 1.2rem;
 }
 
-.antimenu-cont > :nth-child(2) {
+.primimenu-cont > div > div  {
+    font-size: 1.2rem;
+}
+
+.antimenu-cont > :nth-child(2), .primimenu-cont > :nth-child(2) {
     margin-top: 15px;
+}
+
+.primimenu-cont > div > p {
+    font-size: 1.8rem;
+    margin: 0;
+    padding: 0;
 }

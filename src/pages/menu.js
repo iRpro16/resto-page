@@ -1,6 +1,3 @@
-import friedCalamari from "../images/fried-calamari.jpg";
-import octopus from "../images/octopus.jpg";
-
 function createMenu() {
      // Get content cont
      const content = document.getElementById("content");
@@ -12,7 +9,7 @@ function createMenu() {
      const menuCont = document.createElement("div");
      menuCont.classList.add("menu-cont");
      menuCont.style.height = "95%";
-     menuCont.style.width = "80%";
+     menuCont.style.width = "60%";
      menuCont.style.display = 'flex';
      menuCont.style.flexDirection = 'column';
      content.appendChild(menuCont);
@@ -43,18 +40,19 @@ function createMenu() {
      antipastiCont.classList.add("antipasti-cont");
      antipastiCont.style.display = 'flex';
      antipastiCont.style.width = "100%";
-     antipastiCont.style.height = "40%";
-     antipastiCont.style.gap = "20px";
+     antipastiCont.style.height = "50%";
      antipastiCont.style.justifyContent = "center";
      antipastiCont.style.alignItems = "center";
-
      menuCont.appendChild(antipastiCont);
 
      // Cont primi
      const primiCont = document.createElement("div");
      primiCont.classList.add("primi-cont");
+     primiCont.style.display = "flex";
      primiCont.style.width = "100%";
      primiCont.style.height = "50%";
+     primiCont.style.justifyContent = "center";
+     primiCont.style.alignItems = "center";
      menuCont.appendChild(primiCont);
 
      // Antipasti menu
@@ -73,10 +71,9 @@ function createMenu() {
      antimenuTitle.style.padding = '0';
      antimenuTitle.style.margin = '0';
      antimenuTitle.style.color = 'pink';
-     antimenuTitle.style.textAlign = 'center';
      antimenuTitle.style.fontSize = "4rem";
      antimenuTitle.style.borderBottom = "5px solid pink";
-     antimenuTitle.style.width = '60%';
+     antimenuTitle.style.width = '400px';
      antimenuCont.appendChild(antimenuTitle);
      
      // Antipasti menu items
@@ -94,7 +91,7 @@ function createMenu() {
      calamariTitle.innerText = "CALAMARI FRITO ------------------ $14";
      const calamariIngredients = document.createElement("div");
      calamariDiv.style.marginTop = "15px";
-     calamariIngredients.innerText = "Fried calamari served with freshly squeezed ";
+     calamariIngredients.innerText = "Fried calamari served with freshly squeezed lemon";
      calamariDiv.appendChild(calamariTitle);
      calamariDiv.appendChild(calamariIngredients);
      antimenuCont.appendChild(calamariDiv);
@@ -118,6 +115,58 @@ function createMenu() {
      burrataDiv.appendChild(burrataTitle);
      burrataDiv.appendChild(burrataIngredients);
      antimenuCont.appendChild(burrataDiv);
+
+     // Primi menu cont
+     const primimenuCont = document.createElement("div");
+     primimenuCont.classList.add("primimenu-cont");
+     primimenuCont.style.display = "flex";
+     primimenuCont.style.flexDirection = "column";
+     primimenuCont.style.height = "100%"
+     primimenuCont.style.width = "50%";
+     primiCont.appendChild(primimenuCont);
+
+     // Primi title
+     const primimenuTitle = document.createElement("h2");
+     primimenuTitle.classList.add("primimenu-title");
+     primimenuTitle.innerText = "Primi";
+     primimenuTitle.style.padding = '0';
+     primimenuTitle.style.margin = '0';
+     primimenuTitle.style.color = 'pink';
+     primimenuTitle.style.fontSize = "4rem";
+     primimenuTitle.style.borderBottom = "5px solid pink";
+     primimenuTitle.style.width = '400px';
+     primimenuCont.appendChild(primimenuTitle);
+
+     // Primi menu items
+     const originaleDiv = document.createElement("div");
+     const originaleTitle = document.createElement("p");
+     originaleTitle.innerText = "ORGINALE ------------------ $17";
+     const originaleIngrdients = document.createElement("div");
+     originaleDiv.style.marginTop = "15px";
+     originaleIngrdients.innerText = "Mince meat sugo, pepperoni, mozzarella, mushrooms";
+     originaleDiv.appendChild(originaleTitle);
+     originaleDiv.appendChild(originaleIngrdients);
+     primimenuCont.appendChild(originaleDiv);
+
+     const vegetarianaDiv = document.createElement("div");
+     const vegetarianaTitle = document.createElement("p");
+     vegetarianaTitle.innerText = "VEGETARIANA ------------------ $15";
+     const vegetarianaIngredients = document.createElement("div");
+     vegetarianaDiv.style.marginTop = "15px";
+     vegetarianaIngredients.innerText = "Eggplant, sugo, ricotta, fiore di latte";
+     vegetarianaDiv.appendChild(vegetarianaTitle);
+     vegetarianaDiv.appendChild(vegetarianaIngredients);
+     primimenuCont.appendChild(vegetarianaDiv);
+
+     const nonnasDiv = document.createElement("div");
+     const nonnasTitle = document.createElement("p");
+     nonnasTitle.innerText = "DA NONNA ------------------ $ $20";
+     const nonnasIngredients = document.createElement("div");
+     nonnasDiv.style.marginTop = "15px";
+     nonnasIngredients.innerText = "Beef, lamb, house sugo, fiore di latte, béchamel";
+     nonnasDiv.appendChild(nonnasTitle);
+     nonnasDiv.appendChild(nonnasIngredients);
+     primimenuCont.appendChild(nonnasDiv);
 }
 
 
