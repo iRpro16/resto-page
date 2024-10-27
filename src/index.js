@@ -1,10 +1,11 @@
 import "./styles.css";
 import lasagna from "./images/lasagna.jpg";
 import { createMenu } from "./pages/menu";
+import {createAbout} from "./pages/about";
 
 function createHome() {
     // Get content cont
-    let content = document.getElementById("content");
+    const content = document.getElementById("content");
     const header = document.querySelector(".header");
     header.style.borderBottom = 'none';
     content.innerHTML = "";
@@ -70,5 +71,7 @@ createHome();
 
 const getMenu = document.querySelector(".menu");
 const getHome = document.querySelector(".home");
+const getAbout = document.querySelector(".about");
 getMenu.addEventListener("click", createMenu);
 getHome.addEventListener("click", createHome);
+getAbout.addEventListener("click", createAbout);
